@@ -21,6 +21,8 @@ db.once('open', () => {
 
 app.use(express.json())
 
+app.use('/', (req,res) => res.send('Minastop'))
+
 const productsRouter = require('./routes/products')
 app.use('/products', productsRouter)
 
