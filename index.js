@@ -1,4 +1,5 @@
 require("dotenv").config();
+const cors = require('cors');
 const port = process.env.PORT || 2022;
 const express = require("express");
 const app = express();
@@ -20,6 +21,7 @@ db.once('open', () => {
 })
 
 app.use(express.json())
+app.use(cors())
 
 app.get('/', (req,res) => res.send('Minastop'))
 
